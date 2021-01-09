@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<center>
+        <form>
+		<table border="4">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<td><input type="text" name="name" id="name"pattern="[a-zA-Z][a-zA-Z ]{2,}" required></td>
+				</tr>
+			</thead>
+			<tbody>
+                <tr>
+					<th>Age</th>
+					<td><input type="number" name="age" id="age" required></td>
+				</tr>
+				
+				<tr>
+					<th>Email</th>
+					<td><input type="email" name="email" id="email" required></td>
+				</tr>
+				
+				<tr id="btna">
+					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+    </form>
+		<table border="4" id="show">
+			<thead>
+				<tr>
+                    <th>Name</th>
+                    <th>Age</th>
+					<th>Email</th>
+					
+				</tr>
+			</thead>
+		</table>
+	</center>
+	
+	<script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("name").value;
+            list2[x] = document.getElementById("age").value;
+			list3[x] = document.getElementById("email").value;
+			
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+		
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+		
+
+			n++;
+			x++;
+		}
+
+	</script>
+</body>
+</html>

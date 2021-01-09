@@ -1,0 +1,42 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+    <form>
+        
+        <label for="fname">name:</label><br>
+        <input type="text" id="fname" name="Fname"><br>
+        <label for="Adress">Adress:</label><br>
+        <input type="text" id="adress" name="adress"><br>
+        <input type="submit" id="btn" value="Submit" onclick="printinfo()">
+      </form>
+<script>
+    var timer;
+    
+
+    timer = setInterval(function()
+     {
+         alert(' click submit ');
+     }, 30000);
+
+    function printinfo()
+    {
+    var fn=document.getElementById('fname').value;
+    var Ad=document.getElementById('adress').value;
+  var act=  confirm("Are you sure you want to print the information ?");
+  if(act==true){
+    
+  alert("Full Name : " +fn+ " // Adress : "+Ad );
+}
+else 
+alert("not allawed to print information");
+
+    }
+</script>
+
+</body>
+
+</html>

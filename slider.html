@@ -1,0 +1,131 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8" />  
+    <title>My Slider</title>  
+    <style type="text/css">  
+        body {  
+            margin: 0;  
+            background: #866565;  
+        }  
+        .showSlide {  
+            display: none  
+        }  
+            .showSlide img {  
+                width:400px; 
+                height: 300px; 
+                margin-top: 20%;
+            }  
+        .slidercontainer {  
+            width: 500px;
+            height: 500px;  
+            position: relative;  
+            margin: auto;  
+        }  
+        button {    
+            top: 5%;  
+            width: auto;  
+            padding: 5px;  
+            margin: 13px;  
+            color: rgb(253, 253, 253);
+            background-color: #717171; 
+            font-weight: bold;  
+            font-size: 16px;  
+            border-radius: 0 3px 3px 0;  
+        }  
+        .right {  
+            right: 0;  
+            border-radius: 3px 0 0 3px;  
+        }  
+             
+        .content {  
+            color: #eff5d4;  
+            font-size: 30px;  
+            padding: 8px 12px;  
+            position: absolute;  
+            top: 10px;  
+            width: 100px;  
+            text-align: center;  
+        }  
+        
+        
+       
+    </style>  
+</head>  
+<body>  
+    <div class="slidercontainer">  
+        <div class="showSlide fade">  
+            <img  src="D1.jpg" />   
+        </div>  
+        <div class="showSlide fade">  
+            <img src="D2.jpg" />    
+        </div>  
+  
+        <div class="showSlide fade">  
+            <img src="D3.jpg" />   
+        </div> 
+
+        <div class="showSlide fade">  
+            <img src="D4.jpg" />    
+        </div>
+
+        <div class="showSlide fade">  
+            <img src="D5.jpg" />    
+        </div>
+
+        <div class="showSlide fade">  
+            <img src="D6.jpg" />   
+        </div>  
+        <!-- Navigation arrows -->  
+        <button class="left" onclick="nextSlide(1)"> Next</button> 
+        <button class="A" onclick="showSlides()"> SlideShow</button> 
+        <button class="B" onclick="stopShow()">Stop</button> 
+       <button class="right" onclick="nextSlide(-1)">previous</button>  
+    </div>  
+  
+    <script type="text/javascript">  
+        var slide_index = 1;  
+        displaySlides(slide_index);  
+  
+        function nextSlide(n) {  
+            displaySlides(slide_index += n);  
+        }  
+  
+        function currentSlide(n) {  
+            displaySlides(slide_index = n);  
+        }  
+  
+        function displaySlides(n) {  
+            var i;  
+            var slides = document.getElementsByClassName("showSlide");  
+            if (n > slides.length) { slide_index = 1 }  
+            if (n < 1) { slide_index = slides.length }  
+            for (i = 0; i < slides.length; i++) {  
+                slides[i].style.display = "none";  
+            }  
+            slides[slide_index - 1].style.display = "block";  
+        }
+        
+ ///////////////////////////////
+        var slideIndex = 0;
+        var timer = null;
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("showSlide");
+            for (i = 0; i < slides.length; i++) {
+               slides[i].style.display = "none";
+                  }
+               slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            timer = setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        function stopShow() {
+          clearTimeout(timer);
+      }
+    </script>  
+  
+</body>  
+</html> 

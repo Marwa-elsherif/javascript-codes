@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+      <title> our first page </title>
+    <style>
+table,td{border: 1px solid green}
+ td {
+  padding: 10px;width: 100px;
+}
+
+    </style>
+    </head>
+    <body>
+        <table>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Age</b></td> 
+      </tr>
+        </table>
+       
+<script>
+    var num = parseInt(prompt("enter the persons number")); 
+
+for(var i=0; i<num; i++) {
+	
+   
+   do{name=(prompt("enter the name "));
+             if (name.length<3||name.length>10)
+           {
+                alert("name characters should be more than 3 and less than 10 and type of string");
+                prompt("enter the name again");
+              
+           }}while(name.length<3||name.length>10);
+   do{
+      age=parseInt(prompt("enter the age "));
+      if(age<10||age>60){
+      parseInt(prompt("enter the age again"));
+   }}while(age<3||age>60);
+  // window.document.write("person"+i+"name is :"+name+"<br>");
+   //window.document.write("person"+i+"age is :"+age+" year"+"<br> ");
+   
+ 
+function generate_table() {
+  // get the reference for the body
+  var body = document.getElementsByTagName("body")[0];
+  
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+  // creating all cells
+  for (var i = 0; i < 1; i++) {
+    // creates a table row
+    var row = document.createElement("tr");
+
+    for (var j = 0; j < 1; j++) {
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(name);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      var cel = document.createElement("td");
+      var celText = document.createTextNode( age);
+      cel.appendChild(celText);
+      row.appendChild(cel);
+    tblBody.appendChild(row);
+  }
+  tbl.appendChild(tblBody);
+  body.appendChild(tbl);
+  tbl.setAttribute("border", "2");
+ 
+    
+}}
+ generate_table();
+}
+
+</script>
+</body></html>
+

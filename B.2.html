@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+ 
+}
+form{
+    background-color: white;
+     width: 400px;
+  height: 250px;
+  margin-top: 25px
+}
+div{
+   background-color: #92BB3B;
+   border:  1px groove black;
+     width: 470px;
+  height: 550px;
+}
+input{
+    border: none;border-bottom: 1px solid gray;
+    width:320px;
+    padding: 8px
+    }
+    button{
+        width: 350px;
+        padding: 3px;
+        color: white;
+        background-color: #80A829;
+        margin-bottom: 2px;
+        margin-top: 5px;
+        border-radius: 5px
+    }
+    table,tr,td{border: 1px solid black;}
+    td{padding: 10px;}
+    
+
+</style>
+</head>
+<body>
+<center><div>
+ <center><form >
+ 
+ 
+
+ Name : <input type="text" placeholder="name" name="NAME" pattern="[a-zA-Z][a-zA-Z ]{2,}" required>
+<br><br>
+Age : <input type="number" placeholder="Age" name="age"  required>
+  <br><br> 
+Email : <input type="email" placeholder="Email" name="email" id="email" required>
+  <br><br>
+
+    <button type="submit"id="btn" value="Add" onclick="AddRow()" >Add</button>
+    <button type="reset" >Reset</button>
+
+</form> 
+<table border="4" id="show">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+</table>
+
+
+
+</center>
+</div></center>
+<script>
+		
+    var list1 = [];
+    var list2 = [];
+    var list3 = [];
+    
+
+    var n = 1;
+    var x = 0;
+
+    function AddRow(){
+
+        var AddRown = document.getElementById('show');
+        var NewRow = AddRown.insertRow(n);
+
+        list1[x] = document.getElementsByName("NAME").value;
+        list2[x] = document.getElementsByName("age").value;
+        list3[x] = document.getElementsByName("email").value;
+      
+
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+      
+
+        cel1.innerHTML = list1[x];
+        cel2.innerHTML = list2[x];
+        cel3.innerHTML = list3[x];
+       
+
+        n++;
+        x++;
+    }
+
+</script>
+</body>
+</html>

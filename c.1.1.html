@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="openWin()">new window</button>
+<button onclick="moveWinTo()">Move to</button>
+<button onclick="moveWinBy()">Move by 75 * 50px</button>
+<button onclick="reversemove()">reversemove</button>
+
+<script>
+var myWindow;
+
+function openWin() {
+  myWindow = window.open("", "", "width=200, height=200");
+}
+
+function moveWinTo() {
+  myWindow.moveTo(150, 150);
+  myWindow.focus();
+}
+
+function moveWinBy() {
+  setTimeout(myWindow.moveBy(2,1, 2000));
+  myWindow.focus();
+  moveWinBy();
+}
+function reversemove() {
+  setTimeout(myWindow.moveBy(-2, -1), 2000);
+  myWindow.focus();
+  reversemove();
+}
+/*var reversemove;
+    var move;
+    
+function Move() {
+             
+  move = myWindow.moveBy(10 ,10);
+             if(myWindow.screenX==500 && myWindow.screenY==500){
+             clearInterval(move);
+             reversemove = setInterval(function(){
+              myWindow.moveBy(-10 ,-10)
+              if(myWindow.screenX==0 && myWindow.screenY==0){
+              clearInterval(reversemove);
+              move=setInterval(Move , 50);
+              }
+             },50)
+      
+           }
+           myWindow.focus();   
+}*/
+
+document.querySelector('button').addEventListener('click', () => {
+    clearInterval(interval)
+});
+
+const newWindow = open('page2.html','','width=200; height=200');
+
+let x = y = 10;
+const interval = setInterval(() => {
+    newWindow.moveBy(x,y);
+    if(newWindow.screenY < 10){
+        x = y = 10;
+    }
+    if(newWindow.screenY > 400){
+        x = y = -10;
+    }
+}, 100);
+
+
+</script>
+
+</body>
+</html>

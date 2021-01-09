@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    
+    </head>
+    <body>
+
+
+        <p>
+            press any key 
+        </p>
+
+        <script>
+      document.addEventListener("keydown", function(event) {
+  
+  console.log(event);
+    
+  document.body.innerHTML = `
+    
+    <b>which: ${event.which}</b>
+    <br>
+    <b>keyCode:</b> ${event.keyCode}
+    <br>
+    <b>shiftKey:</b> ${event.shiftKey}
+    </br>
+    <b>altKey:</b> ${event.altKey}
+    <br>
+    <b>ctrlKey:</b> ${event.ctrlKey}
+    <br>
+    <b>key:</b> ${event.key}
+  `;
+  
+});
+
+        </script>
+
+    </body>
+</html>

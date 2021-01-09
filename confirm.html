@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+
+   
+    function init() {
+        var myname = localStorage.getItem("name");
+        var myaddress = localStorage.getItem("address");
+        var mymobile = localStorage.getItem("mobile");
+        var myemail = localStorage.getItem("email");
+        var gender = localStorage.getItem("gender");
+        
+        document.write("welcome  "+myname);
+        document.write("<hr>");
+        document.write("your address "+myaddress);
+        document.write("<hr>");
+        document.write("your email  "+myemail);
+        document.write("<hr>");
+        document.write("your gender  "+gender);
+        document.write("<hr>");
+        document.write("your mobile  "+mymobile);
+        
+        
+       
+    }
+
+</script>
+</head>    
+
+<body onload="init();">
+
+</body>
+
+</html>
